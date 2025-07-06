@@ -6,123 +6,152 @@
   <title>Cookielicious</title>
   <link rel="stylesheet" href="styles.css">
   <script>
-function getCurrentYear() {
-  document.getElementById("year").textContent = new Date().getFullYear();
-}
+    function getCurrentYear() {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    }
 
-function subscribe() {
-  const email = document.getElementById("email").value;
-  if (email.trim()) {
-    alert("Subscribed with: " + email);
-  } else {
-    alert("Please enter an email address.");
-  }
-}
+    function subscribe() {
+      const email = document.getElementById("email").value;
+      if (email.trim()) {
+        alert("Subscribed with: " + email);
+      } else {
+        alert("Please enter an email address.");
+      }
+    }
 
-document.addEventListener("DOMContentLoaded", getCurrentYear);
+    document.addEventListener("DOMContentLoaded", getCurrentYear);
   </script>
   <style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #14532d;
-  margin: 0;
-  padding: 0;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #14532d;
+      margin: 0;
+      padding: 0;
+    }
 
-.header {
-  background-color: #d1fae5;
-  text-align: center;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .header {
+      background-color: #d1fae5;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem; /* Increase this value for more space */
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.products {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
+    .header-logo {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: block;
+      object-fit: cover;
+    }
 
-.card {
-  background-color: #ecfdf5;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 128, 0, 0.15);
-  text-align: center;
-  max-width: 350px;
-  width: 100%;
-}
+    .header-text {
+      flex: 1;
+      text-align: center;
+    }
 
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-.subscribe {
-  background-color: #d1fae5;
-  padding: 2rem;
-  text-align: center;
-}
+    .header-text h2 {
+      font-weight: normal;
+      margin-top: 0.5rem;
+    }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-}
+    .products {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
 
-.form input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #a7f3d0;
-  border-radius: 6px;
-}
+    .card {
+      background-color: #ecfdf5;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 128, 0, 0.15);
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+    }
 
-.form button {
-  background-color: #10b981;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
 
-.form button:hover {
-  background-color: #059669;
-}
+    .subscribe {
+      background-color: #d1fae5;
+      padding: 2rem;
+      text-align: center;
+    }
 
-footer {
-  background-color: #14532d;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #a7f3d0;
+      border-radius: 6px;
+    }
+
+    .form button {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .form button:hover {
+      background-color: #059669;
+    }
+
+    footer {
+      background-color: #14532d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
   <!-- Header Section -->
   <section class="header">
-    <img src="Add a subheading.jpg" alt="Cookielicious Logo" style="display:block;margin:0 auto 1rem auto;border-radius:50%;width:100px;height:100px;">
-    <h1>Welcome to Cookielicious</h1>
-    <h2 style="font-weight:normal;margin-top:0.5rem;"></h2>
-    <p>Surprisingly Sweet, Suspiciously Bitter — made with bitter gourd</p>
+    <div class="header-content">
+      <img src="Add a subheading.jpg" alt="Cookielicious Logo" class="header-logo">
+      <div class="header-text">
+        <h1>Welcome to Cookielicious</h1>
+        <h2></h2>
+        <p>Surprisingly Sweet, Suspiciously Bitter — made with bitter gourd</p>
+      </div>
+    </div>
   </section>
 
   <!-- Product Cards -->
   <section class="products">
     <div class="card">
-      <img src="Add a subheading.jpg" alt="cookie" />
+      <img src="516111640_24021724220811354_2064997359873950738_n.jpg" alt="cookie" />
       <h2>Signature Cookie #1</h2>
       <p>Baked fresh daily with love, our Signature Cookie #1 is packed with flavor and the surprising taste of bitter gourd.</p>
     </div>
