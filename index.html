@@ -24,7 +24,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      background-color: #e6f9ec;
       color: #14532d;
       margin: 0;
       padding: 0;
@@ -32,46 +32,42 @@
 
     .header {
       background-color: #d1fae5;
-      padding: 2rem;
+      padding: 2rem 1rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .header-content {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 3rem; /* Increase this value for more space */
-      max-width: 800px;
+      gap: 1.5rem;
+      max-width: 1000px;
       margin: 0 auto;
+      justify-content: center;
     }
 
     .header-logo {
       border-radius: 50%;
       width: 100px;
       height: 100px;
-      display: block;
       object-fit: cover;
     }
 
     .header-text {
-      flex: 1;
+      flex: 1 1 300px;
       text-align: center;
     }
 
     .header-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .header-text h2 {
-      font-weight: normal;
-      margin-top: 0.5rem;
+      font-size: 2rem;
+      margin: 0.5rem 0;
     }
 
     .products {
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem 1rem;
     }
 
     .card {
@@ -82,6 +78,7 @@
       text-align: center;
       max-width: 350px;
       width: 100%;
+      margin: 1rem;
     }
 
     .card img {
@@ -91,9 +88,9 @@
       margin-bottom: 1rem;
     }
 
-    .subscribe {
+    .subscribe, .Contact {
       background-color: #d1fae5;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
@@ -104,6 +101,7 @@
       gap: 1rem;
       max-width: 400px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .form input {
@@ -111,6 +109,7 @@
       padding: 0.5rem;
       border: 1px solid #a7f3d0;
       border-radius: 6px;
+      font-size: 1rem;
     }
 
     .form button {
@@ -119,11 +118,68 @@
       border: none;
       padding: 0.5rem 1rem;
       border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
     }
 
     .form button:hover {
       background-color: #059669;
+    }
+
+    .Contact h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .Contact .form {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      align-items: center;
+      transform: none;
+    }
+
+    /* Force one line and allow horizontal scroll on very small screens */
+    .Contact .form {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .Contact .form a {
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.5rem;
+      font-weight: bold;
+    }
+
+    .Contact .form a[href*="facebook"] img {
+      width: 48px;
+      height: 48px;
+      filter: none;
+    }
+    .Contact .form a[href*="facebook"] {
+      color: #1877f3;
+    }
+
+    .Contact .form a[href*="instagram"] img {
+      width: 48px;
+      height: 48px;
+      filter: none;
+    }
+    .Contact .form a[href*="instagram"] {
+      color: #E4405F;
+    }
+
+    .Contact .form a[href*="tiktok"] img {
+      width: 48px;
+      height: 48px;
+      filter: none;
+    }
+    .Contact .form a[href*="tiktok"] {
+      color: #010101;
     }
 
     footer {
@@ -132,6 +188,42 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+    }
+
+    /* Media Queries for Tablets & Mobiles */
+    @media (min-width: 600px) {
+      .header-text h1 {
+        font-size: 2.5rem;
+      }
+      .Contact .form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .header-logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .card {
+        margin: 1rem 0;
+      }
+
+      .Contact .form a {
+        font-size: 1rem;
+      }
+
+      .Contact .form img {
+        width: 32px !important;
+        height: 32px !important;
+      }
     }
   </style>
 </head>
@@ -157,14 +249,22 @@
     </div>
   </section>
 
-  <!-- Subscription Section -->
-  <section class="subscribe">
-    <h3>Stay in Touch</h3>
-    <div class="form">
-      <input id="email" type="email" placeholder="Enter your email" />
-      <button onclick="subscribe()">📧 Subscribe</button>
-    </div>
-  </section>
+ <!-- Subscription Section -->
+  <!-- Contact Section -->
+<section class="Contact">
+  <h3 style="text-align:center;">CONTACT US</h3>
+  <div class="form" style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 3rem;">
+    <a href="https://www.facebook.com/share/16qwHC16Pk/?mibextid=qi2Omg" target="_blank" style="text-decoration:none; color:#1877f3; font-size:1.5rem; display: flex; align-items: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:48px;height:48px;margin-right:8px;">Facebook
+    </a>
+    <a href="https://www.instagram.com/cookieliciousss_93?igsh=MXZtOWl4bzdxYm4zeA==" target="_blank" style="text-decoration:none; color:#E4405F; font-size:1.5rem; display: flex; align-items: center;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:48px;height:48px;margin-right:8px;">Instagram
+    </a>
+    <a href="https://www.tiktok.com/@cookielicious_93?_t=ZS-8xnnqsS81Rw&_r=1" target="_blank" style="text-decoration:none; color:#010101; font-size:1.5rem; display: flex; align-items: center;">
+      <img src="tiktok_PNG26.png" alt="TikTok" style="width:48px;height:48px;margin-right:8px;">TikTok
+    </a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
