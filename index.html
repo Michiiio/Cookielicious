@@ -5,13 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cookielicious</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <script>
+    function getCurrentYear() {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    }
+    document.addEventListener("DOMContentLoaded", getCurrentYear);
+  </script>
+  <script>
+    function subscribe() {
+      const email = document.getElementById("email").value;
+      if (email) {
+        alert("Subscribed with: " + email);
+      } else {
+        alert("Please enter an email address.");
+      }
+    }
+  </script>
 </head>
 <body>
   <!-- Header Section -->
   <section class="header">
     <h1>Welcome to Cookielicious</h1>
-    <p>Deliciously Baked Happiness in Every Bite</p>
+    <p>Surprisingly Sweet, Suspiciously Bitter — made with bitter gourd</p>
   </section>
 
   <!-- Product Cards -->
@@ -19,5 +34,32 @@
     <div class="card">
       <img src="https://source.unsplash.com/400x300/?cookie,1" alt="cookie" />
       <h2>Signature Cookie #1</h2>
-      <p>Baked fresh daily with love, our Signature Cookie #1 is packed with chocolate chips and a hint of sea salt.</p>
-      <button class="add-to-cart">Add to Cart</button>
+      <p>Baked fresh daily with love, our Signature Cookie #1 is packed with flavor and the surprising taste of bitter gourd.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?cookie,2" alt="cookie" />
+      <h2>Signature Cookie #2</h2>
+      <p>A unique blend of sweetness and bitterness, our Signature Cookie #2 uses bitter gourd to create a one-of-a-kind treat.</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?cookie,3" alt="cookie" />
+      <h2>Signature Cookie #3</h2>
+      <p>Infused with nutritious bitter gourd, Signature Cookie #3 is a bold twist on your classic cookie craving.</p>
+    </div>
+  </section>
+
+  <!-- Subscription Section -->
+  <section class="subscribe">
+    <h3>Stay in Touch</h3>
+    <div class="form">
+      <input id="email" type="email" placeholder="Enter your email" />
+      <button onclick="subscribe()">📧 Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Cookielicious. All rights reserved.
+  </footer>
+</body>
+</html>
