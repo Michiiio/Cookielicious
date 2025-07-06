@@ -132,12 +132,17 @@
     }
 
     .Contact .form {
+      display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 3rem;
       align-items: center;
-      transform: none;
+      gap: 3rem;
+      flex-wrap: nowrap;
+      text-align: center;
+    }
+
+    .Contact .form a {
+      justify-content: center;
     }
 
     /* Force one line and allow horizontal scroll on very small screens */
@@ -244,6 +249,19 @@
         <p>Surprisingly Sweet, Suspiciously Bitter — made with bitter gourd</p>
       </div>
     </div>
+  </section>
+
+  <!-- Management Team Section -->
+  <section class="team" style="background:#ecfdf5; padding:2rem 1rem; max-width:600px; margin:2rem auto 0 auto; border-radius:12px; box-shadow:0 2px 8px rgba(0,128,0,0.08);">
+    <h3 style="text-align:center; margin-bottom:1.5rem; color:#14532d;">Our Management Team</h3>
+    <ul style="list-style:none; padding:0; margin:0; color:#14532d; font-size:1.1rem; text-align:center;">
+      <li><strong>Ceo/Leader:</strong> Solis, John Christian S.</li>
+      <li><strong>HR Management:</strong> Ragusante, JohnRhey T.</li>
+      <li><strong>Financial Management:</strong> Quijano, Lourence H.</li>
+      <li><strong>Strategic Management:</strong> De Guzman, Ethan Maalik M.</li>
+      <li><strong>Operating Management:</strong> Sinipete, Jeane Robert A.</li>
+      <li><strong>Marketing Management:</strong> Caerlang, Mhart J.</li>
+    </ul>
   </section>
 
   <!-- Product Cards -->
